@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Builder(
+          builder: (context) => Center(
+            child: RaisedButton(
+              child: const Text('Show toast'),
+              onPressed: (){
+                Scaffold.of(context).showSnackBar(new SnackBar(
+                  content: new Text("Sending Message"),
+                ));
+              }
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
